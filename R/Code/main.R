@@ -1,5 +1,13 @@
 ### Reproducible Research Fundamentals -  Main R Script
 
+# Create environment
+# renv::init()
+
+# As a first time user please run renv::restore() to restore the 
+# environment needed to run this code
+# This function only needs to be run once
+# renv::restore()
+
 # Load libraries ---- 
 
 # Load necessary libraries
@@ -16,13 +24,22 @@ library(modelsummary) # creating summary tables
 library(stargazer) # writing nice tables
 library(RColorBrewer) # color palettes
 
+
+# Recording libraries installed to renv
+renv::snapshot()
+
 # Set data path ----
 
 # this is the second root of the project, the first root is the code whose directory 
 # is already being handled by the rstudio project.
 
-data_path <- "the path for your data"
+data_path <- "C:/Users/wb622894/OneDrive - WBG/Desktop/RRF - public/Course Materials/DataWork/Data"
+
 
 # Run the R scripts ----
 
-source("the path of your scripts")
+source("R/Code/01-processing-data.R")
+
+source("R/Code/02-constructing-data.R")
+
+source("R/Code/03-analyzing-data.R")
